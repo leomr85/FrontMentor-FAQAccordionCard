@@ -1,0 +1,315 @@
+/*
+  Author: Leonardo M. Rodrigues.
+  Date: 08/04/2021.
+  Challenge "FAQ Accordion Card" from Frontend Mentor.
+  Link: https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam
+*/
+
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Tags  * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+html, body{
+  height: 100%;
+  min-width: 375px;
+}
+
+body{
+  margin: 0 auto;
+
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: linear-gradient(#af67e9,#6565e7);
+}
+
+hr{
+  border-style: solid none none none;
+  border-color: #e7e7e9;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Container * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+.container{
+  height: 97%;
+  width: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Card  * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+.main-card{
+  min-width: 335px;
+  width: 90%;
+
+  min-height: 465px;
+  height: 60%;
+
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 35px 35px #5941b9;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Card Left half  * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+.card-left{
+  width: 50%;
+  z-index: 0;
+  position: relative;
+  display: inline-flex;
+}
+
+.overflow-hidden{
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+
+  overflow: hidden;
+}
+
+.overflow-hidden-over{
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: 2;
+  left: 0;
+
+  overflow: hidden;
+}
+
+.overflow-visible{
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  z-index: 3;
+  left: 0;
+
+  overflow: visible;
+}
+
+.bg-img > img{
+  width: 800px;
+}
+
+.ft-img > img{
+  width: 450px;
+}
+
+.xt-img > img{
+  width: 165px;
+}
+
+.bg-img{
+  position: relative;
+  z-index: 1;
+}
+
+.ft-img{
+  position: relative;
+  z-index: 2;
+}
+
+.xt-img{
+  position: relative;
+  z-index: 3;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Card Right half * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+.card-right{
+  width: 50%;
+}
+
+.card-right-content{
+  padding-right: 25%;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.card-right-content > .header{
+  margin: 15% auto 10% auto;
+
+  color: #1d1e35; /* Fallback color */
+  color: hsl(238, 29%, 16%);
+  font-weight: 700;
+}
+
+.card-right-content .question {
+  color: #4a4b5e; /* Fallback color */
+  color: hsl(237, 12%, 33%);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.card-right-content .answer {
+  color: #787887; /* Fallback color */
+  color: hsl(240, 6%, 50%);
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.5;
+}
+
+.question:hover{
+  color: #f47c57; /* Fallback color */
+  color: hsl(14, 88%, 65%);
+  text-decoration: none;
+}
+
+.arrow{
+  float: right;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Responsive Settings * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+@media screen and (min-width: 0px) and (max-width: 575px) {
+
+  .main-card{
+    min-height: 465px;
+    height: 70%;
+    margin-top: 75px;
+  }
+
+  .overflow-hidden-over{
+    overflow: visible;
+  }
+
+  .bg-img > img{
+    width: 230px;
+  }
+
+  .bg-img{
+    top: -130px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ft-img > img{
+    width: 230px;
+  }
+
+  .ft-img{
+    top: -105px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .xt-img > img{
+    width: 80px;
+  }
+
+  .xt-img{
+    top: -30px;
+    left: -70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-right-content{
+    padding: 0 2.5% 0 2.5%;
+  }
+
+  .card-right-content > .header{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+  .bg-img{
+    top: -200px;
+    left: -610px;
+  }
+
+  .ft-img{
+    top: 30px;
+    left: -260px;
+  }
+
+  .xt-img{
+    display: none;
+  }
+
+  .card-right-content{
+    padding: 0 2.5% 0 0;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .bg-img{
+    top: -200px;
+    left: -540px;
+  }
+
+  .ft-img{
+    top: 50px;
+    left: -190px;
+  }
+
+  .xt-img{
+    display: none;
+  }
+
+  .card-right-content{
+    padding: 0 5% 0 0;
+  }
+
+}
+
+@media screen and (min-width: 992px){
+
+  .bg-img{
+    top: -200px;
+    left: -420px;
+  }
+
+  .ft-img{
+    top: 50px;
+    left: -70px;
+  }
+
+  .xt-img{
+    top: 185px;
+    left: -95px;
+  }
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * */
+/* Footer  * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * */
+
+.footer{
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #a7a7f1;
+}
+
+.attribution > a {
+  color: #a7a7f1;
+}
+
+.attribution > a:hover{
+  color: #d3d3f8;
+  text-decoration: none;
+}
